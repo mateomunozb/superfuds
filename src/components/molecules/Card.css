@@ -1,0 +1,27 @@
+.rowstyle {
+  margin: 0;
+}
+
+.rowstyle span {
+  width: 50px;
+  height: 25px;
+  text-align: center;
+}
+
+h6 {
+  margin: 0;
+  height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardstyle {
+  margin: 20px;
+  height: 300px;
+}
+
+.cardstyle .principalimg {
+  height: 130px;
+  padding: 5px;
+}
