@@ -5,7 +5,7 @@ const DropDown = () => {
     <div>
       <a
         className='nav-link dropdown-toggle text-white'
-        href='#'
+        href='/'
         id='navbarDropdown'
         role='button'
         data-toggle='dropdown'
@@ -14,7 +14,7 @@ const DropDown = () => {
         Perfil
       </a>
       <div className='dropdown-menu' aria-labelledby='navbarDropdown'>
-        <a className='dropdown-item' href='#'>
+        <a className='dropdown-item' href='/'>
           Opciones
         </a>
       </div>

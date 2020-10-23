@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Card from '../molecules/Card'
 import axios from 'axios'
 
-const CarouselProducts = () => {
+const CarouselProducts = (props) => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {

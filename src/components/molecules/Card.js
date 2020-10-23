@@ -5,10 +5,14 @@ const Card = (props) => {
   const { imageProduct, titleProduct, priceProduct, contentProduct, sellosProduct } = props
 
   const [isHovering, setIsHovering] = useState(false)
+  // const [isHoveringBadge, setIsHoveringBadge] = useState(false)
 
   const handleMouseHover = () => setIsHovering(true)
 
   const toggleHoverState = () => setIsHovering(false)
+
+  // const handleMouseHoverSellos = () => setIsHoveringBadge(true)
+  // const toggleHoverStateSellos = () => setIsHoveringBadge(false)
 
   return (
     <div
@@ -20,8 +24,13 @@ const Card = (props) => {
         <img src={imageProduct} className='card-img-top principalimg' alt='...' />
         <ul className=' list-group list-group-horizontal justify-content-center '>
           {sellosProduct.map((sello) => (
-            <li className='list-group-item border-0 '>
-              <img src={sello.image} alt='...' />
+            <li key={sello.name} className='list-group-item border-0 '>
+              <img
+                // onMouseEnter={handleMouseHoverSellos}
+                // onMouseLeave={toggleHoverStateSellos}
+                src={sello.image}
+                alt='...'
+              />
             </li>
           ))}
         </ul>

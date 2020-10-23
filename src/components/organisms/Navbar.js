@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import SearchBar from '../molecules/Searchbar'
 import Logo from '../atoms/Logo'
@@ -6,7 +6,18 @@ import DropDown from '../molecules/Dropdown'
 import CarIcon from '../atoms/Caricon'
 import ProfileImg from '../atoms/Profileimg'
 
-const NavBar = () => {
+const NavBar = (props) => {
+  const [click, setclick] = useState(false)
+  console.log('TLC: NavBar -> click', click)
+
+  const outPutEvent = () => setclick(true)
+
+  useEffect(() => {
+    if (click) {
+      props.onChange(click)
+    }
+  })
+
   return (
     <nav className='navbar navbar-light bg-success'>
       <div className='container h-100'>
@@ -18,7 +29,7 @@ const NavBar = () => {
           <div className='col'>
             <div className='row align-items-center justify-content-between'>
               <SearchBar />
-              <CarIcon />
+              <CarIcon clickHandler={outPutEvent} />
               <div className='dropdown row'>
                 <DropDown />
                 <ProfileImg />
@@ -28,20 +39,6 @@ const NavBar = () => {
         </div>
       </div>
     </nav>
-
-    // <nav className='navbar navbar-light bg-success'>
-    //   <a class='navbar-brand'>
-    //     <Logo />
-    //   </a>
-    //   <ul>
-    //     <li class='nav-item'>
-    //       <SearchBar />
-    //     </li>
-    //   </ul>
-    //   <i className='fas fa-shopping-cart text-white'></i>
-    //   <i className='fas fa-shopping-cart text-white'></i>
-    //   <DropDown />
-    // </nav>
   )
 }
 
